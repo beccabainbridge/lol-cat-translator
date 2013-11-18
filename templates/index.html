@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LolCat Translator</title>
+  </head>
+  <body>
+    <h4>LolCat Translator</h4>
+    <form action='' method='post'>
+      <textarea name='text' rows='5' cols='25'></textarea>
+      <br>
+      <input type='submit' value="Translate">
+    </form>
+    {% if translated_text %}
+    <p>Translation: {{translated_text}}</p>
+    {% endif %}
+  </body>
+</html>
