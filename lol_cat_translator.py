@@ -45,11 +45,11 @@ class LolCatTranslator(object):
         msg = msg.replace("I'm", "Iz")
         msg = msg.replace("a ", "")
         words = re.findall("\w+", msg)
+        if words[0].lower() == "can":
+            subject = words[1]
+            msg = msg.replace(words[0] + " " + subject, subject.title() + " can")
         for word in words:
             msg = msg.replace(word, self.translate_word(word))
-        if words[0].lower == "can":
-            subject = words[1]
-            msg = message.replace(word[0] + " " + word[1], word[1].title() + " can")
         if msg.endswith("!"):
             msg = msg + "!" * random.randint(1,5) + "1"
         # sometimes add srsly to the end of msg
